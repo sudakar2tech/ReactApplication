@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { BrowserRouter,useNavigate } from "react-router-dom";
-import Home from './Home';
 
 
 const Login = () => {
