@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  gap: 20px; /* Space between columns */
+}
+
+.column {
+  flex: 1; /* Makes all columns equal width */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+}
+
+/* Responsive design: stack columns on small screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}

@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import './Login.css';
-import { BrowserRouter,useNavigate } from "react-router-dom";
+import { BrowserRouter,useNavigate, Routes , Route} from "react-router-dom";
 
 
 const Login = () => {
   // State management for form inputs
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleButtonClick = () => {
-    // Pass the target path as a string
-    navigate('/Home', { replace: true });
+  
+   const handleRedirect = () => {
+    // 3. Pass the root path '/' to go to the home page
+     navigate('/Home', { replace: true });
   };
   // Handle input changes
   const handleChange = (e) => {
@@ -106,13 +107,13 @@ const Login = () => {
           </div>
 
           {/* Submit Button */}
-           <BrowserRouter>
+        
   
-          <button type="submit" className="submit-btn" onClick={() => navigate('/Home')} disabled={isSubmitting}>
+          <button type="submit" className="submit-btn" onClick={handleRedirect} disabled={isSubmitting}>
             {isSubmitting ? 'Signing in...' : 'Sign In'}
           </button>
-           </BrowserRouter>
-  
+       
+ 
         </form>
 
         <div className="login-footer">
