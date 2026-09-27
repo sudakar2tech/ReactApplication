@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 // Create an instance with a base URL and timeouts
-const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5001/api/employee', 
+const apiClient = axios.get('http://localhost:5001/api/employee', {
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
