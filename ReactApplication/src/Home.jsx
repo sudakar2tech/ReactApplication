@@ -30,7 +30,7 @@ function Home() {
    <h2>Employee List</h2>
    <ul>
      {employee.map(emp => (
-       <li key={emp.employeeid}>{emp.employeeid}</li>
+       <li key={emp.employeeid}>{emp.ename} - {emp.address}</li>
      ))}
    </ul>
   </div>
