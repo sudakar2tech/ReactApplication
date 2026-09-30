@@ -1,0 +1,57 @@
+.employee-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  border: 1px solid #e1e4e8;
+}
+
+.employee-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 12px;
+}
+
+.employee-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.employee-name {
+  margin: 0;
+  font-size: 18px;
+  color: #24292e;
+}
+
+.employee-role {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #586069;
+}
+
+.employee-body {
+  font-size: 14px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.info-label {
+  color: #586069;
+  font-weight: bold;
+}
+
+.info-value {
+  color: #24292e;
+}
