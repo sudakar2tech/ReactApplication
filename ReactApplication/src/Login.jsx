@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { BrowserRouter,useNavigate, Routes , Route} from "react-router-dom";
+import axios from 'axios';
 
 
 const Login = () => {
@@ -10,10 +11,31 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
-   const handleRedirect = () => {
-    // 3. Pass the root path '/' to go to the home page
-     navigate('/Home', { replace: true });
+  const [employeeName, setEmployeeName] = useState('');
+  const [role , setRole] = useState('');
+
+   const handleRedirect = async(e) => {
+    e.preventDefault();
+  try
+  {
+       
+
+      const response =  await axios.post('http://localhost:5000/api/Employee/login?ename=' + employeeName);
+      if(response.data.role === 'Admin') {
+        navigate('/Home', { replace: true });
+      }
+      if(response.data.role === 'Manager') {
+        navigate('/Manager', { replace: true });
+      }
+      if(response.data.role === 'User') {
+        navigate('/User', { replace: true });
+      }
+
+    }
+
+  catch (error) {
+    alert('Invalid username or password:');
+  } 
   };
   // Handle input changes
   const handleChange = (e) => {
@@ -66,17 +88,18 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="login-form">
           {/* Email Field */}
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email">Employee Name</label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="name@company.com"
-              value={formData.email}
-              onChange={handleChange}
-              className={errors.email ? 'input-error' : ''}
+              type="text"             
+              placeholder="Employee Name"
+              value={employeeName}
+              onChange={(e) => {
+                const { value } = e.target;
+                setEmployeeName(value);
+              }}
+             
             />
-            {errors.email && <span className="error-text">{errors.email}</span>}
+           
           </div>
 
           {/* Password Field */}

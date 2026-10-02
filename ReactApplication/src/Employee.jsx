@@ -7,8 +7,8 @@ function Employee() {
     Address: '',
     Age: '',
     Active: '1',
-    Role: 'Admin'
-    
+    Role: 'Admin',
+    Task: ''
   });
 
   // 2. Handle input changes dynamically for all fields
