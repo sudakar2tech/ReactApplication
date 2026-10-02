@@ -27,24 +27,59 @@ function User() {
 
   return (
     <div class="container">
-       <div class="column">
-    <h2>Team Task Management System</h2>
-    <p>Role-Based Full-Stack Application Assessment</p>
-  </div>
+       
 
-  <div>
-   <h2>View and Manage assigned task</h2>
+  
+ 
    <ul>
+    
+   <h2>Name:</h2> 
      {employee.map(emp => (
-       <li key={emp.employeeid}>{emp.ename} - {emp.address} - {emp.role} - {emp.task}</li>
+         <div className="employee-card" key={emp.employeeid}>
+
+        
+         {emp.ename}  
+      </div>
+     ))}
+   </ul>
+  
+   <ul>
+    <h2>Address:</h2>
+     {employee.map(emp => (
+         <div className="employee-card" key={emp.employeeid}>
+
+        
+         {emp.address} 
+      </div>
+     ))}
+   </ul>
+ 
+   <ul>
+    <h2>Role:</h2>
+     {employee.map(emp => (
+         <div className="employee-card" key={emp.employeeid}>
+
+        
+         {emp.role} 
+      </div>
+     ))}
+   </ul>
+   <ul>
+    <h2>Task assigned:</h2>
+     {employee.map(emp => (
+         <div className="employee-card" key={emp.employeeid}>
+
+        
+         {emp.task} 
+      </div>
      ))}
    </ul>
   </div>
    
-    
+  
 
   
-</div>
+
   );
 }
 
