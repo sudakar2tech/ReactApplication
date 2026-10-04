@@ -3,6 +3,7 @@ import React from 'react';
 import './Home.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './User.css';
 
 
 
@@ -33,13 +34,16 @@ function User() {
  
    <ul>
     
-   <h2>Name:</h2> 
+   <h2>Employee Name:</h2> 
+   
      {employee.map(emp => (
          <div className="employee-card" key={emp.employeeid}>
 
         
-         {emp.ename}  
+         {emp.ename} 
+         <img src="images.png" class="employee-avatar"></img> 
       </div>
+      
      ))}
    </ul>
   
